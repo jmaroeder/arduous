@@ -39,8 +39,10 @@ jobs:
           install: >-
             base-devel
             git
-            mingw-w64-x86_64-toolchain
+            make
             mingw-w64-x86_64-cmake
+            mingw-w64-x86_64-ninja
+            mingw-w64-x86_64-toolchain
       - name: Configure build
         run: cmake -Bbuild -H.
       - name: Build
