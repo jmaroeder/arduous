@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+  "arduous",
+  "arduous-libretro",
+]

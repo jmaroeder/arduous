@@ -1,0 +1,11 @@
+[package]
+name = "arduous-libretro"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+arduous = { path = "../arduous" }
+libretro-backend = "0.2"
