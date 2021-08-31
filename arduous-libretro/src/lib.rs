@@ -53,7 +53,7 @@ impl libretro_backend::Core for Emulator {
         macro_rules! update_controllers {
             ( $( $button:ident ),+ ) => (
                 $(
-                    self.arduboy.set_button_state(Button::$button, handle.is_joypad_button_pressed( 0, JoypadButton::$button ) );
+                    self.arduboy.set_button(Button::$button, handle.is_joypad_button_pressed( 0, JoypadButton::$button ) );
                 )+
             )
         }
@@ -75,14 +75,8 @@ impl libretro_backend::Core for Emulator {
 
 impl Emulator {
     fn update_framebuffer(&mut self) {
-        for (pixel_in, pixel_out) in self
-            .arduboy
-            .display()
-            .iter()
-            .flat_map(|r| r.iter())
-            .zip(self.framebuffer.iter_mut())
-        {
-            *pixel_out = Emulator::translate_pixel(*pixel_in);
+        for (pixel_in, pixel_out) in self.arduboy.display_iter().zip(self.framebuffer.iter_mut()) {
+            *pixel_out = Emulator::translate_pixel(pixel_in);
         }
     }
 
