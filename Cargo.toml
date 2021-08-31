@@ -1,6 +1,3 @@
 [workspace]
 
-members = [
-  "arduous",
-  "arduous-libretro",
-]
+members = ["arduous", "arduous-libretro"]
