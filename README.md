@@ -1,13 +1,7 @@
-# arduous
+# NOTE
 
-A Libretro emulator core for the Arduboy
+Arduous development is now taking place under the `libretro` organization.
 
-See https://www.jroeder.net/series/arduous-endeavor/ for a series of blog posts about building it!
+[libretro/arduous](https://github.com/libretro/arduous)
 
-## Build
-
-```bash
-$ cd build
-$ cmake ..
-$ make
-```
+This repository will remain as a pointer to the official development repo.
